@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GuardDogs - AI-powered smart-contract inspector with on-chain audit ledger on Rootstock Testnet.">
+    <meta name="keywords" content="Rootstock, Smart Contracts, AI Audit, GuardDogs, Security Scanner, GPT, Blockchain, EVM">
+    <meta name="author" content="GuardDogs Team">
+    <meta property="og:title" content="GuardDogs on Lock - Smart Contract Auditor">
+    <meta property="og:description" content="AI-driven smart-contract scans + immutable on-chain audit records on Rootstock Testnet.">
+    <meta property="og:image" content="GuardDogs-logo.png">
+    <meta property="og:url" content="https://guarddogsol.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="GuardDogs-logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>GuardDogs on Lock - Rootstock Inspector</title>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>
+        <img src="GuardDogs-logo.png" alt="GuardDogs Logo" style="height: 28px; vertical-align: middle;">
+        GuardDogs on Lock
+      </h1>
+      <div class="subtitle">AI-powered smart-contract auditor with immutable on-chain logs</div>
+      <div class="links">
+        <a href="https://twitter.com/GuardDogsTeam" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/GuardDogs" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://dorahacks.io/hackathon/ai-buidl-lab-rootstock/detail" target="_blank" title="DoraHacks"><i class="fas fa-rocket"></i></a>
+      </div>
+    </header>
+
+    <section class="intro">
+      <h2>🔍 What is GuardDogs on Lock?</h2>
+      <p>Instantly audit Rootstock Testnet contracts with AI—and log every request & result on-chain for full transparency.</p>
+    </section>
+
+    <section class="scanner">
+      <button id="connect"><i class="fas fa-link"></i> Connect Wallet</button>
+      <p id="wallet" class="wallet-status"></p>
+      <div class="scan-bar">
+        <input type="text" id="contractAddress" placeholder="Enter Rootstock testnet contract address (0x…)" />
+        <button id="analyze">Analyze Contract</button>
+      </div>
+      <div id="output" class="output-box"></div>
+    </section>
+
+    <footer>
+      <p>Built for the <a href="https://dorahacks.io/hackathon/ai-buidl-lab-rootstock/detail" target="_blank">AI BUIDL Lab by DoraHacks & Rootstock</a></p>
+      <p>&copy; 2025 GuardDogs on Lock</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.6.2/dist/ethers.umd.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+
+</html>
