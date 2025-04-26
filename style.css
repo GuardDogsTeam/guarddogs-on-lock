@@ -10,17 +10,28 @@ body {
   min-height: 100vh;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 header {
   background-color: #222;
   color: #fff;
   padding: 20px;
   text-align: center;
-  position: relative;
 }
 
 header h1 {
   margin: 0;
   font-size: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+
+header h1 img {
+  height: 28px;
+  margin-right: 8px;
 }
 
 .subtitle {
@@ -29,41 +40,161 @@ header h1 {
   margin-top: 4px;
 }
 
-.links a i {
+nav.links {
+  margin-top: 12px;
+}
+
+nav.links a {
+  margin: 0 8px;
+}
+
+nav.links a i {
   font-size: 24px;
   color: #4caf50;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.links a i:hover {
+nav.links a i:hover {
   color: #66bb6a;
   transform: scale(1.2);
 }
 
-.links a img:hover {
-  filter: brightness(120%);
+.hero {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
 }
 
-.intro,
-.scanner {
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.features {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.features h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.feature-card i {
+  font-size: 36px;
+  color: #4caf50;
+  margin-bottom: 12px;
+}
+
+.feature-card h4 {
+  margin: 12px 0 8px;
+  font-size: 18px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.how-it-works {
   max-width: 800px;
-  margin: 30px auto;
+  margin: 40px auto;
   padding: 20px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
 }
 
-.intro h2 {
-  margin-top: 0;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
+.how-it-works h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.intro h2::before {
-  content: "🔍";
-  margin-right: 10px;
+.how-it-works ol {
+  padding-left: 20px;
+}
+
+.how-it-works li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.demo {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.demo h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.scanner {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+.scanner h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
 }
 
 #connect {
@@ -119,6 +250,79 @@ button:hover {
   font-size: 14px;
 }
 
+.prompt-engineering {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+.prompt-engineering h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.prompt-engineering ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+.prompt-engineering li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.team {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.team h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.team p {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.faq {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+.faq h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.faq dl {
+  margin: 0;
+}
+
+.faq dt {
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.faq dd {
+  margin: 4px 0 12px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
 footer {
   background-color: #1c1c1c;
   color: #aaa;
@@ -128,30 +332,22 @@ footer {
   margin-top: auto;
 }
 
-footer a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+footer p {
+  margin: 8px 0;
 }
 
-footer a:hover {
+footer a {
+  color: #fff;
   text-decoration: underline;
 }
 
 @media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
   .scan-bar {
     flex-direction: column;
-  }
-
-  .links {
-    position: static;
-    margin-top: 15px;
-    justify-content: center;
-  }
-
-  .links a img {
-    width: 22px;
-    height: 22px;
   }
 
   header h1 {
@@ -160,5 +356,18 @@ footer a:hover {
 
   .subtitle {
     font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .features h3,
+  .how-it-works h3,
+  .demo h3,
+  .prompt-engineering h3,
+  .team h3,
+  .faq h3 {
+    font-size: 20px;
   }
 }
