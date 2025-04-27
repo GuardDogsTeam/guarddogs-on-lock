@@ -33,52 +33,41 @@ We began with a simple free-form prompt to GPT-4 asking for a security analysis,
 
 ---
 
-Step-by-Step Guide: Building GuardDogs on Lock
+## 📋 Step-by-Step Guide: Building GuardDogs on Lock
 
-1) Prerequisites: Before you begin, please ensure you have:
+### 1. Prerequisites
+- Node.js (v16+) & npm — https://nodejs.org/
+- Composer (for PHP dependencies) — https://getcomposer.org/
+- PHP 8+ (built-in server) — https://www.php.net/
+- MetaMask extension (set to Rootstock Testnet)
+- OpenAI API key — https://platform.openai.com/
 
-Node.js (v16+) and npm installed — https://nodejs.org/
-Composer (for PHP dependencies) — https://getcomposer.org/
-PHP 8+ (built-in server) — https://www.php.net/
-MetaMask extension, pointed to “Rootstock Testnet”
-An OpenAI API key — https://platform.openai.com/
-2) Clone & Install
-
-# 2.1 Clone our repo
+### 2. Clone & Install
 git clone https://github.com/GuardDogsTeam/guarddogs-on-lock.git
- guarddogs-on-lock
-cd
-# 2.2 Install JavaScript dependencies
+cd guarddogs-on-lock
 npm install
-# 2.3 Install any PHP dependencies
 composer install
-3) Configure Your Environment
 
-# copy the example env file
+### 3. Configure Environment
 cp .env.example .env
-Open .env in your editor and set:
-OPENAI_API_KEY=sk-…
-4) Deploy the AuditRegistry Contract
+Open .env and set:
+OPENAI_API_KEY=sk-...
 
-# compile & deploy on Rootstock Testnet
+### 4. Deploy the AuditRegistry Contract
 npx hardhat compile
 npx hardhat run scripts/deploy.js --network rskTestnet
-Copy the deployed address (it will look like 0x48A13f…) and confirm it matches the one in app.js.
-5) Start the Backend & Cache Service
+Copy the deployed address (e.g. 0x48A13f…) and confirm it matches the one in app.js.
 
-# launch PHP’s built-in server (serves index.html, analyze.php, etc.)
+### 5. Start Backend & Cache Service
 php -S 0.0.0.0:8000
-This serves the front-end and analyze.php endpoint. The PHP script listens for incoming JSON, calls OpenAI, caches results in analysis-cache.json.
-6) Launch the Front-end DApp
+This serves index.html and analyze.php, listens for JSON audit requests, calls OpenAI, and caches to analysis-cache.json.
 
-Open your browser to:
-
-http://localhost:8000/index.html
-Connect MetaMask (RSK Testnet).
-Paste any contract address on Rootstock.
-Click Analyze Contract.
-Triggers AuditRequested on-chain
-Backend fetches bytecode (Alchemy + Blockscout), runs GPT-4, caches by source-hash
-Calls completeAudit(address,score) → emits AuditCompleted
-View Trust Score, summary, risks & red flags — all permanently on-chain.
-
+### 6. Launch the Front-end DApp
+-Open your browser at http://localhost:8000/index.html
+-Connect MetaMask (Rootstock Testnet)
+-Paste any Rootstock contract address
+-Click Analyze Contract
+   -Emits AuditRequested on-chain
+   -Backend fetches bytecode (Alchemy + Blockscout), runs GPT-4 audit, caches by source-hash
+   -Calls completeAudit(address, score) → emits AuditCompleted
+-View Trust Score, summary, security risks & red flags—fully logged on-chain.
