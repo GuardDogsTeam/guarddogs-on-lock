@@ -59,15 +59,14 @@ npx hardhat run scripts/deploy.js --network rskTestnet
 Copy the deployed address (e.g. 0x48A13f…) and confirm it matches the one in app.js.
 
 ### 5. Start Backend & Cache Service
-php -S 0.0.0.0:8000
-This serves index.html and analyze.php, listens for JSON audit requests, calls OpenAI, and caches to analysis-cache.json.
+php -S 0.0.0.0:8000  &  This serves index.html and analyze.php, listens for JSON audit requests, calls OpenAI, and caches to analysis-cache.json.
 
 ### 6. Launch the Front-end DApp
--Open your browser at http://localhost:8000/index.html
--Connect MetaMask (Rootstock Testnet)
--Paste any Rootstock contract address
--Click Analyze Contract
-   -Emits AuditRequested on-chain
-   -Backend fetches bytecode (Alchemy + Blockscout), runs GPT-4 audit, caches by source-hash
-   -Calls completeAudit(address, score) → emits AuditCompleted
--View Trust Score, summary, security risks & red flags—fully logged on-chain.
+- Open your browser at `http://localhost:8000/index.html`  
+- Connect MetaMask (Rootstock Testnet)  
+- Paste any Rootstock contract address  
+- Click **Analyze Contract**  
+  - Emits `AuditRequested` on-chain  
+  - Backend fetches bytecode (Alchemy + Blockscout), runs GPT-4 audit, caches by source-hash  
+  - Calls `completeAudit(address, score)` → emits `AuditCompleted`  
+- View Trust Score, summary, security risks & red flags — fully logged on-chain.
