@@ -43,23 +43,24 @@ We began with a simple free-form prompt to GPT-4 asking for a security analysis,
 - OpenAI API key — https://platform.openai.com/
 
 ### 2. Clone & Install
-git clone https://github.com/GuardDogsTeam/guarddogs-on-lock.git
-cd guarddogs-on-lock
-npm install
-composer install
+- git clone https://github.com/GuardDogsTeam/guarddogs-on-lock.git
+- cd guarddogs-on-lock
+- npm install
+- composer install
 
 ### 3. Configure Environment
-cp .env.example .env
-Open .env and set:
-OPENAI_API_KEY=sk-...
+- cp .env.example .env
+- Open .env and set:
+- OPENAI_API_KEY=sk-...
 
 ### 4. Deploy the AuditRegistry Contract
-npx hardhat compile
-npx hardhat run scripts/deploy.js --network rskTestnet
-Copy the deployed address (e.g. 0x48A13f…) and confirm it matches the one in app.js.
+- npx hardhat compile
+- npx hardhat run scripts/deploy.js --network rskTestnet
+- Copy the deployed address (e.g. 0x48A13f…) and confirm it matches the one in app.js.
 
 ### 5. Start Backend & Cache Service
-php -S 0.0.0.0:8000  &  This serves index.html and analyze.php, listens for JSON audit requests, calls OpenAI, and caches to analysis-cache.json.
+- php -S 0.0.0.0:8000
+- This serves index.html and analyze.php, listens for JSON audit requests, calls OpenAI, and caches to analysis-cache.json.
 
 ### 6. Launch the Front-end DApp
 - Open your browser at `http://localhost:8000/index.html`  
