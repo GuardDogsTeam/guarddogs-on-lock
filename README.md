@@ -22,6 +22,9 @@ GuardDogs on Lock lets any developer instantly audit a Rootstock smart contract 
 - **X:** https://x.com/GuardDogsTeam  
 - **Presentation:** https://guarddogsol.com/GuardDogs-presentation.pdf
 
+### AI Usage & Prompt Engineering
+We began with a simple free-form prompt to GPT-4 asking for a security analysis, but inconsistent outputs led us to iteratively refine our approach. Today, we use a two-message dialog: a system role (“You are GuardDogs Security Auditor, an EVM/Solidity expert…”) followed by a user message that specifies the chain, contract address, and fenced Solidity source. We demand a strict JSON schema with fields trust_score, summary, security_risks, red_flags, gas_optimizations, and references. Model parameters are tuned to temperature=0.2 and max_tokens=600 for focused, concise results. To minimize latency and API cost, we implemented on-disk caching keyed by address or source-hash. These prompt-engineering steps ensure reliable, machine-readable audit reports that feed directly into our on-chain AuditRegistry.
+
 
 ![menu](https://github.com/user-attachments/assets/300aca98-fbce-4084-8bf7-ffcc243e2d83)
 
