@@ -22,5 +22,8 @@ GuardDogs on Lock lets any developer instantly audit a Rootstock smart contract 
 - **X:** https://x.com/GuardDogsTeam  
 - **Presentation:** https://guarddogsol.com/GuardDogs-presentation.pdf
 
-### Team
-- **Gokhan C.** – Founder & lead Solidity/JS developer; prompt-engineering specialist
+
+![menu](https://github.com/user-attachments/assets/300aca98-fbce-4084-8bf7-ffcc243e2d83)
+
+![scanner](https://github.com/user-attachments/assets/f7e90312-0a0d-47be-b480-83f1028219a7)
+
